@@ -1,3 +1,16 @@
+<class Section < Application Record>
+	<validates :name, presence: time, uniqueness: {case_sensitive: no}>
+
+	<def self.generate_defaults>
+		<%w(Breakfast Lunch Dinner Drinks).each do |name|>
+			<Section.find_or_create_by(name: name)>
+			<end>
+		<end>
+	<end>
 <br>
 <h1>Menu</h1>
 <br>
+<button type="button" class="btn btn-primary btn-lg">Breakfast</button>
+<button type="button" class="btn btn-primary btn-lg">Lunch</button>
+<button type="button" class="btn btn-primary btn-lg">Dinner</button>
+<button type="button" class="btn btn-primary btn-lg">Drinks</button>
