@@ -3,6 +3,11 @@ class HomeController < ApplicationController
   end
 
   def menu
+  	#@a = 'Tan Bui'
+  	breakfast = 'Breakfast'
+  	lunch = 'Lunch'
+  	#@section_list = [ breakfast, lunch, 'Dinner', 'Drinks']
+  		@section_list = Section.all
   end
 
   def contact_us
