@@ -3,11 +3,14 @@ class HomeController < ApplicationController
   end
 
   def menu
-  	#@a = 'Tan Bui'
-  	breakfast = 'Breakfast'
-  	lunch = 'Lunch'
-  	#@section_list = [ breakfast, lunch, 'Dinner', 'Drinks']
-  		@section_list = Section.all
+    @food_items = FoodItem.all
+  	@sections = %w(Breakfast Lunch Dinner Drinks)
+    @food_items = FoodItem.filter_by_section(params[:section]).order("#{params[:sort_param]} ")
+  
+    if params[:search]
+      @food_items = FoodItem.search(params[:search])
+    end
+
   end
 
   def contact_us

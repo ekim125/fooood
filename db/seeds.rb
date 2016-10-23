@@ -5,7 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-['Breakfast', 'Lunch', 'Dinner', 'Drinks'].each do |section|
-	Section.create(name: section)
 end
